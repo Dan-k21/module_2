@@ -11,6 +11,5 @@ public class James {
         double money = input.nextDouble();
         double usd = money * vnd;
         System.out.println("VND: " + usd);
-
     }
 }
