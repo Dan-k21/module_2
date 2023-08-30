@@ -184,5 +184,70 @@ public class BaiTap {
 //        Double eq1 = (-b + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / 2 * a;
 //        Double eq2 = (-b - Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / 2 * a;
 //        System.out.println("Vậy x1 = " + eq1 + ", x2 = " + eq2);
+//        15
+//        System.out.println("Nhập tuổi: ");
+//        int age = input.nextInt();
+//        if (age > 0 && age <= 120) {
+//            System.out.println("Đây là tuổi của 1 người");
+//        } else {
+//            System.out.println("Đây không là tuổi của 1 người");
+//        }
+//        16
+//        System.out.println("Nhập cạnh a: ");
+//        int sideA = input.nextInt();
+//        System.out.println("Nhập cạnh b: ");
+//        int sideB = input.nextInt();
+//        System.out.println("Nhập cạnh c: ");
+//        int sideC = input.nextInt();
+//        if (sideA > 0 && sideB > 0 && sideC > 0) {
+//            if (sideA + sideB > sideC && sideB + sideC > sideA && sideA + sideC > sideB) {
+//                System.out.println("a, b, c là cạnh của 1 tam giác");
+//            }
+//        } else {
+//            System.out.println("a, b, c không là cạnh của 1 tam giác");
+//        }
+//        17
+//        System.out.println("Nhập số kWh: ");
+//        Double kwh = input.nextDouble();
+//        Double ep;
+//        if (kwh >= 0) {
+//            if (kwh >= 0 && kwh <= 0) {
+//                ep = kwh * 1.678;
+//                System.out.println("Giá điện là: " + ep + " nghìn");
+//            } else if (kwh > 50 && kwh <= 100) {
+//                ep = kwh * 1.734;
+//                System.out.println("Giá điện là: " + ep + " nghìn");
+//            } else if (kwh > 100 && kwh <= 200) {
+//                ep = kwh * 2.014;
+//                System.out.println("Giá điện là: " + ep + " nghìn");
+//            } else {
+//                ep = kwh * 2.927;
+//                System.out.println("Giá điện là: " + ep + " nghìn");
+//            }
+//        } else {
+//            System.out.println("Không có");
+//        }
+//        18
+//        System.out.println("Nhập số tiền (Triệu): ");
+//        Double money = input.nextDouble();
+//        Double tax;
+//        if (money >= 0) {
+//            if (money >= 0 && money <= 5) {
+//                tax = money * 0.05;
+//                System.out.println("Thuế thu nhập cá nhân là " + tax + " triệu");
+//            } else if (money > 5 && money <=10) {
+//                tax = money * 0.1;
+//                System.out.println("Thuế thu nhập cá nhân là " + tax + " triệu");
+//            } else if (money > 10 && money <=18) {
+//                tax = money * 0.15;
+//                System.out.println("Thuế thu nhập cá nhân là " + tax + " triệu");
+//            } else if (money > 18 && money <=32) {
+//                tax = money * 0.2;
+//                System.out.println("Thuế thu nhập cá nhân là " + tax + " triệu");
+//            } else {
+//                tax = money * 0.35;
+//                System.out.println("Thuế thu nhập cá nhân là " + tax + " triệu");
+//            }
+//        }
     }
 }
