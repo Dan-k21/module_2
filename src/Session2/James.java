@@ -117,19 +117,29 @@ public class James {
 //                    System.out.println("Không có");
 //            }
 //        }
-//        System.out.println("Nhập số: ");
+//        In ra số nguyên tố
+//        System.out.println("Nhập số lượng: ");
 //        int quantity = input.nextInt();
-//        int n = 2;
+//        int num = 2;
 //        int count = 0;
-//        for (int i = 0; i < ; i++) {
-//            for (int j = 1; j <= n; j++, n++) {
-//                if (n % j == 0) {
-//                    count++;
-//                }
+//        while (count < quantity) {
+//            if (check(num)) {
+//                System.out.println(num);
+//                count++;
 //            }
-//            if (count == 2) {
-//                System.out.println(n);
+//            num++;
+//        }
+//    }
+//
+//    public static boolean check(int n) {
+//        if (n <= 1) {
+//            return false;
+//        }
+//        for (int i = 2; i <= Math.sqrt(n); i++) {
+//            if (n % i == 0) {
+//                return false;
 //            }
 //        }
+//        return true;
     }
 }
