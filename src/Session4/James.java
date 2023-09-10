@@ -1,2 +1,5 @@
-package Session4;public class James {
+package Session4;
+
+public class James {
+    
 }
