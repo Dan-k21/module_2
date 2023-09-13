@@ -1,4 +1,4 @@
-package Session4.Exercise.Rectangle;
+package session4.Exercise.Rectangle;
 
 public class Rectangle {
     public int length;

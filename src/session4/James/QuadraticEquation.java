@@ -1,4 +1,4 @@
-package Session4.James;
+package session4.James;
 
 public class QuadraticEquation {
     public int a;

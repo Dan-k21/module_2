@@ -1,4 +1,4 @@
-package Session3;
+package session3;
 
 public class Prepare {
 //    1. Lớp (Class):

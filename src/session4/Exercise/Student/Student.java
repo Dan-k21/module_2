@@ -1,4 +1,4 @@
-package Session4.Exercise.Student;
+package session4.Exercise.Student;
 
 public class Student {
     public String name;

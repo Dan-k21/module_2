@@ -1,6 +1,5 @@
-package Session3;
+package session3;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class James {
