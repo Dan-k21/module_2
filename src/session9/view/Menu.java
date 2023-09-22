@@ -27,8 +27,12 @@ public class Menu {
                     showMenuEdit();
                     break;
                 case 4:
+                    showMenuSearchById();
                     break;
                 case 5:
+                    showSeachMenuByName();
+                    break;
+                case 6:
                     showAll();
                     break;
             }
@@ -96,7 +100,29 @@ public class Menu {
         }
     }
 
-    public void showMenuSearchId() {
+    public void showMenuSearchById() {
+        System.out.println("\n--- Tìm kiếm sinh viên bằng ID---");
+        System.out.print("Nhập ID sinh viên: ");
+        int id = inputInt.nextInt();
+        if (studentManager.checkId(id) == false) {
+            System.out.println("\nKhông có sinh viên này");
+        } else {
+            System.out.println("\nThông tin sinh viên cần tìm: ");
+            System.out.println(studentManager.findStudentById(id));
+        }
+    }
 
+    public void showSeachMenuByName() {
+        System.out.println("\n--- 5.Danh sách sinh viên cần tìm ---");
+        System.out.println("Nhập tên bạn muốn tìm: ");
+        String name = inptuString.nextLine();
+        if (studentManager.checkName(name) == false) {
+            System.out.println("Không có sinh viên này trong danh sách");
+        } else {
+            System.out.println("\nDanh sách sinh viên cần tìm: ");
+            for (Student student : studentManager.findStudentByName(name)) {
+                System.out.println(student);
+            }
+        }
     }
 }
