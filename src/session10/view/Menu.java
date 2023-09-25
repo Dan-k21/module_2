@@ -51,8 +51,8 @@ public class Menu {
         String address = str.nextLine();
         System.out.print("Nhập lớp: ");
         String clazz = str.nextLine();
-        Student student = new Student(name, age, address, clazz);
-        listStudent.add(student);
+//        Student student = new Student(name, age, address, clazz);
+//        listStudent.add(student);
         System.out.println("Thêm thành công!!!\n");
     }
 
@@ -68,8 +68,8 @@ public class Menu {
         String address = str.nextLine();
         System.out.print("Nhập lớp: ");
         String clazz = str.nextLine();
-        Student student = new Student(id, name, age, address, clazz);
-        listStudent.edit(id, student);
+//        Student student = new Student(id, name, age, address, clazz);
+//        listStudent.edit(id, student);
     }
 
     public void showListStudent() {
@@ -83,11 +83,11 @@ public class Menu {
         listStudent.delete(id);
     }
     public void showMenuSearch1() {
-        System.out.println("Danh sách sinh viên có tuổi = 20: ");
-        listStudent.showAge();
+//        System.out.println("Danh sách sinh viên có tuổi = 20: ");
+//        listStudent.showAge();
     }
     public void showMenuSearch2() {
-        System.out.println("Danh sách sinh viên có tuổi = 23 và ở Đà Nẵng: ");
-        listStudent.showAge_Address();
+//        System.out.println("Danh sách sinh viên có tuổi = 23 và ở Đà Nẵng: ");
+//        listStudent.showAge_Address();
     }
 }
