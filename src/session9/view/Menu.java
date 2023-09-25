@@ -13,7 +13,7 @@ public class Menu {
     public void showMainMenu() {
         int choice;
         do {
-            System.out.println("---- Quản lý sinh viên -----\n1. Thêm sinh viên\n2. Xóa sinh viên\n3. Sửa sinh viên\n4. Tìm kiếm theo ID\n5. Hiển thị tất cả\n0. Thoát");
+            System.out.println("---- Quản lý sinh viên -----\n1. Thêm sinh viên\n2. Xóa sinh viên\n3. Sửa sinh viên\n4. Tìm kiếm theo ID\n7. Tìm kiếm theo tên\n6. Hiển thị tất cả\n0. Thoát");
             System.out.println("Nhập lựa chọn: ");
             choice = inputInt.nextInt();
             switch (choice) {
@@ -35,6 +35,10 @@ public class Menu {
                 case 6:
                     showAll();
                     break;
+                case 0:
+                    System.exit(0);
+                default:
+                    System.out.println("Không có");
             }
         } while (choice != 0);
     }
