@@ -1,10 +1,11 @@
 package algorithm;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        divisorsOddAndMultiplesEven();
     }
 
     public static void checkSquareNumber() {
@@ -245,4 +246,50 @@ public class Main {
         }
         System.out.println("S = " + result);
     }
-}
+
+    public static void calS3() {
+        Scanner num = new Scanner(System.in);
+        System.out.println("Nhập số n: ");
+        int number = num.nextInt();
+        double result = 0;
+        for (double i = 1; i <= number; i++) {
+            result += (i * (i + 1)) / ((i + 1) * (i + 2));
+        }
+        System.out.println("S = " + result);
+    }
+
+    public static void divisorsAndMultiples() {
+        int number = 12;
+        System.out.print("Ước của 12: ");
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.print("Bội nhỏ hơn 100 của 12: ");
+        for (int i = 0; ; i++) {
+            if (number * i > 100) {
+                break;
+            }
+            System.out.print(number * i + " ");
+        }
+    }
+
+//    public static void divisorsOddAndMultiplesEven() {
+//        int number = 12;
+//        int maxOdd = 0;
+//        int mul =
+//        for (int i = 1; i < number; i++) {
+//            if (number % i == 0) {
+//                if (i % 2 != 0) {
+//                    maxOdd = i;
+//                }
+//            }
+//        }
+//        System.out.print("Ước lẻ lớn nhất của 12: " + maxOdd);
+//        for (int i = 0; ; i++) {
+//            number * i
+//        }
+//        System.out.print("Bội chẵn nhỏ nhất của 12: ");
+//    }
+//}
