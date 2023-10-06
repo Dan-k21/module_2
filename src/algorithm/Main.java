@@ -275,21 +275,20 @@ public class Main {
         }
     }
 
-//    public static void divisorsOddAndMultiplesEven() {
-//        int number = 12;
-//        int maxOdd = 0;
-//        int mul =
-//        for (int i = 1; i < number; i++) {
-//            if (number % i == 0) {
-//                if (i % 2 != 0) {
-//                    maxOdd = i;
-//                }
-//            }
-//        }
-//        System.out.print("Ước lẻ lớn nhất của 12: " + maxOdd);
-//        for (int i = 0; ; i++) {
-//            number * i
-//        }
+    public static void divisorsOddAndMultiplesEven() {
+        int number = 12;
+        int maxOdd = 0;
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                if (i % 2 != 0) {
+                    maxOdd = i;
+                }
+            }
+        }
+        System.out.print("Ước lẻ lớn nhất của 12: " + maxOdd);
+        for (int i = 0; ; i++) {
+
+        }
 //        System.out.print("Bội chẵn nhỏ nhất của 12: ");
-//    }
-//}
+    }
+}
