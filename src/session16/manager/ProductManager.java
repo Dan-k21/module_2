@@ -5,7 +5,13 @@ import session16.model.Product;
 import java.util.ArrayList;
 
 public class ProductManager implements IManager<Product>{
-    private ArrayList<Product> products = new ArrayList<>();
+    private ReadAndWriteProductList readAndWriteProductList;
+    private ArrayList<Product> products;
+
+    public ProductManager() {
+        readAndWriteProductList = new ReadAndWriteProductList();
+        products = readAndWriteProductList.readFile();
+    }
     @Override
     public void add(Product products) {
         this.products.add(products);

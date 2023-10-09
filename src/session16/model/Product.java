@@ -1,19 +1,22 @@
 package session16.model;
 
+import session16.manager.ReadAndWriteProductList;
+
 public class Product {
     private int id;
     private String name;
     private int quantity;
     private int price;
     private String category;
-    static int idIncrement = 1;
+
+    public Product() {}
+    private ReadAndWriteProductList readAndWriteProductList = new ReadAndWriteProductList();
     public Product(String name, int quantity, int price, String category) {
-        this.id = idIncrement;
+        this.id = readAndWriteProductList.readFile().get(readAndWriteProductList.readFile().size() - 1).getId() + 1;
         this.name = name;
         this.quantity = quantity;
         this.price = price;
         this.category = category;
-        idIncrement++;
     }
 
     public Product(int id, String name, int quantity, int price, String category) {
