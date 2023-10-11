@@ -1,6 +1,6 @@
 package session16.model;
 
-import session16.manager.ReadAndWriteProductList;
+import session16.dao.ReadAndWriteProductList;
 
 public class Product {
     private int id;

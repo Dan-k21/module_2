@@ -1,45 +1,49 @@
 package session16.manager;
 
+import session16.dao.ReadAndWriteProductList;
 import session16.model.Product;
-
-import java.util.ArrayList;
+import java.util.List;
 
 public class ProductManager implements IManager<Product>{
-    private ReadAndWriteProductList readAndWriteProductList;
-    private ArrayList<Product> products;
+    List<Product> productList;
+    ReadAndWriteProductList readAndWriteProductList = new ReadAndWriteProductList();
 
     public ProductManager() {
-        readAndWriteProductList = new ReadAndWriteProductList();
-        products = readAndWriteProductList.readFile();
+        this.productList = readAndWriteProductList.readFile();
     }
     @Override
-    public void add(Product products) {
-        this.products.add(products);
+    public boolean add(Product products) {
+        this.productList.add(products);
+        readAndWriteProductList.writelist(this.productList);
+        return true;
     }
 
     @Override
-    public void edit(int id, Product newProduct) {
+    public boolean edit(int id, Product newProduct) {
         int index = findById(id);
-        this.products.set(index, newProduct);
+        if (index == -1) return false;
+        this.productList.set(index, newProduct);
+        readAndWriteProductList.writelist(this.productList);
+        return true;
     }
 
     @Override
-    public void delete(int id) {
-        for (Product product : products) {
-            if (product.getId() == id) {
-                products.remove(product);
-            }
-        }
+    public boolean delete(int id) {
+        int index = findById(id);
+        if (index == -1) return false;
+        this.productList.remove(index);
+        readAndWriteProductList.writelist(this.productList);
+        return true;
     }
 
     @Override
-    public ArrayList<Product> showAll() {
-        return products;
+    public List<Product> showAll() {
+        return this.productList;
     }
 
     public int findById(int id) {
-        for (int i = 0; i < products.size(); i++) {
-            if (id == this.products.get(i).getId()) {
+        for (int i = 0; i < productList.size(); i++) {
+            if (id == this.productList.get(i).getId()) {
                 return i;
             }
         }

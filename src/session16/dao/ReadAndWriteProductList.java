@@ -1,26 +1,27 @@
-package session16.manager;
+package session16.dao;
 
 import session16.model.Product;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReadAndWriteProductList {
     File file = new File("product.csv");
 
-    public void writelist(ArrayList<Product> products) {
+    public void writelist(List<Product> productList) {
         try {
             FileWriter fileWriter = new FileWriter(file);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            String line = "";
-            for (Product product : products) {
-                line += product.getId() + "," + product.getName() + "," + product.getPrice() + "," + product.getCategory() + "\n";
+            String data = "";
+            for (Product product : productList) {
+                data += product.getId() + "," + product.getName() + "," + product.getPrice() + "," + product.getQuantity() + "," + product.getCategory() + "\n";
 
             }
-            bufferedWriter.write(line);
+            bufferedWriter.write(data);
             bufferedWriter.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -32,9 +33,12 @@ public class ReadAndWriteProductList {
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
                 String[] data = line.split(",");
-                Product product = new Product(Integer.parseInt(data[0]), data[1], Integer.parseInt(data[2]), (int) Double.parseDouble(data[3]), data[4]);
+                Product product = new Product(Integer.parseInt(data[0]), data[1], Integer.parseInt(data[2]), Integer.parseInt(data[3]), data[4]);
                 products.add(product);
             }
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
         } catch (IOException ex) {
             ex.printStackTrace();
         }

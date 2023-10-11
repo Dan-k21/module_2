@@ -1,16 +1,16 @@
 package session16.view;
 
+import session16.input.Input;
 import session16.manager.ProductManager;
 import session16.model.Product;
 
 import javax.jws.Oneway;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
     private ProductManager listProduct = new ProductManager();
-    private Scanner num = new Scanner(System.in);
-    private Scanner str = new Scanner(System.in);
 
     public void showMainMenu() {
         int choice;
@@ -22,7 +22,7 @@ public class Menu {
                     "4. Hiển thị danh sách sản phẩm\n" +
                     "0. Thoát\n");
             System.out.print("Nhập lựa chọn: ");
-            choice = num.nextInt();
+            choice = Input.getInputInt();
             switch (choice) {
                 case 1:
                     showMenuAdd();
@@ -46,20 +46,20 @@ public class Menu {
     public void showMenuAdd() {
         System.out.println("----Thêm sản phẩm----");
         System.out.print("Nhập tên: ");
-        String name = str.nextLine();
+        String name = Input.getInputString();
         System.out.print("Nhập số lượng: ");
-        int quantity = num.nextInt();
+        int quantity = Input.getInputInt();
         System.out.print("Nhập giá: ");
-        int price = num.nextInt();
+        int price = Input.getInputInt();
         System.out.print("Nhập loại: ");
-        String category = str.nextLine();
+        String category = Input.getInputString();
         Product products = new Product(name, quantity, price, category);
         listProduct.add(products);
     }
 
     public void showListProduct() {
         System.out.println("----Danh sách sản phẩm----");
-        ArrayList<Product> list = listProduct.showAll();
+        List<Product> list = listProduct.showAll();
         for (Product product: list) {
             System.out.println(product);
         }
@@ -68,15 +68,15 @@ public class Menu {
     public void showMenuEdit() {
         System.out.println("----Sửa sản phẩm theo ID----");
         System.out.print("Nhập ID: ");
-        int id = num.nextInt();
+        int id = Input.getInputInt();
         System.out.print("Nhập tên: ");
-        String name = str.nextLine();
+        String name = Input.getInputString();
         System.out.print("Nhập số lượng: ");
-        int quantity = num.nextInt();
+        int quantity = Input.getInputInt();
         System.out.print("Nhập giá: ");
-        int price = num.nextInt();
+        int price = Input.getInputInt();
         System.out.print("Nhập loại: ");
-        String category = str.nextLine();
+        String category = Input.getInputString();
         Product product = new Product(id, name, quantity, price, category);
         listProduct.edit(id, product);
     }
@@ -84,7 +84,7 @@ public class Menu {
     public void showMenuDelete() {
         System.out.println("----Xóa sản phẩm theo ID----");
         System.out.print("Nhập ID muốn xóa: ");
-        int id = num.nextInt();
+        int id = Input.getInputInt();
         listProduct.delete(id);
     }
 }

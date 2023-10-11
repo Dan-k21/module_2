@@ -1,10 +1,11 @@
 package session16.manager;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IManager<P> {
-    void add(P products);
-    void edit(int id, P newProduct);
-    void delete(int id);
-    ArrayList<P> showAll();
+    boolean add(P products);
+    boolean edit(int id, P newProduct);
+    boolean delete(int id);
+    List<P> showAll();
 }
